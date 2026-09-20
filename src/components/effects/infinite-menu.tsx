@@ -19,6 +19,8 @@ interface InfiniteImageGridProps {
   gap?: number;
   bgColor?: string;
   textColor?: string;
+  autoScroll?: boolean;
+  autoScrollSpeed?: number;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -54,6 +56,8 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   gap: gapProp = 250,
   bgColor = "#f5f5f0",
   textColor = "#111111",
+  autoScroll = false,
+  autoScrollSpeed = 0.5,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const maskRef = useRef<HTMLDivElement>(null);
@@ -264,6 +268,47 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   }, [buildGrid]);
 
   // ─── Title ────────────────────────────────────────────────────────────────
+    // ─── Auto-scroll ─────────────────────────────────────────────────────────
+  useEffect(() => {
+    if (!autoScroll) return;
+    let animFrame: number;
+    let paused = false;
+
+    const tick = () => {
+      if (!paused) {
+        const container = containerRef.current;
+        if (container) {
+          const cx = gsap.getProperty(container, "x") as number;
+          const cy = gsap.getProperty(container, "y") as number;
+          gsap.set(container, {
+            x: cx - autoScrollSpeed,
+            y: cy - autoScrollSpeed * 0.5,
+          });
+          recycle();
+        }
+      }
+      animFrame = requestAnimationFrame(tick);
+    };
+
+    const mask = maskRef.current;
+    const pause = () => { paused = true; };
+    const resume = () => { paused = false; };
+
+    mask?.addEventListener("mousedown", pause);
+    mask?.addEventListener("mouseup", resume);
+    mask?.addEventListener("touchstart", pause);
+    mask?.addEventListener("touchend", resume);
+
+    animFrame = requestAnimationFrame(tick);
+    return () => {
+      cancelAnimationFrame(animFrame);
+      mask?.removeEventListener("mousedown", pause);
+      mask?.removeEventListener("mouseup", resume);
+      mask?.removeEventListener("touchstart", pause);
+      mask?.removeEventListener("touchend", resume);
+    };
+  }, [autoScroll, autoScrollSpeed, recycle]);
+  
   const words = title.trim().split(" ");
   const mid = Math.ceil(words.length / 2);
   const line1 = words.slice(0, mid).join(" ");

@@ -106,7 +106,7 @@ export default function FloatingNav() {
           `}
         >
           <nav className="flex flex-col gap-4 p-6">
-            {["Home", "Work", "Lab"].map((item) => (
+            {["Home", "Work", "Credentials"].map((item) => (
               <Link
                 key={item}
                 href={`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`}

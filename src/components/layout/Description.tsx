@@ -16,7 +16,7 @@ export default function Description() {
         {/* Title */}
         <TextBottomReveal>
         <h4
-          className="font-semibold uppercase mb-4"
+          className="font-semibold uppercase mb-8"
           aria-label="Myself"
         >
           Myself
@@ -27,7 +27,7 @@ export default function Description() {
 
         <TextAnimation blockColor="#1A5CFF">
         {/* Desktop Text */}
-        <p className="hidden lg:block italic font-[family-name:var(--font-instrument-serif)] text-[clamp(28px,3.5vw,96px)] font-semibold tracking-tight leading-none">
+        <p className="hidden lg:block italic font-[family-name:var(--font-instrument-serif)] text-[clamp(20px,2.5vw,52px)] font-semibold tracking-wider leading-[1.4]">
           Pursuing Data Science, focused on turning raw data into useful
           predictions. I've built end-to-end ML projects including a live
           Streamlit app for house price prediction, and I'm comfortable
@@ -38,7 +38,7 @@ export default function Description() {
         {/* Mobile Text */}
         <TextAnimation blockColor="#1A5CFF">
         <p
-          className="lg:hidden italic font-[family-name:var(--font-instrument-serif)] text-[clamp(28px,3.5vw,96px)] font-semibold tracking-tight leading-none"
+          className="lg:hidden italic font-[family-name:var(--font-instrument-serif)] text-[clamp(20px,2.5vw,52px)] font-semibold tracking-wider leading-[1.4]"
           aria-label="Pursuing Data Science, focused on turning raw data into useful predictions. I've built end-to-end ML projects including a live Streamlit app for house price prediction, and I'm comfortable across the full pipeline — cleaning, EDA, model training, and deployment — using Python, Scikit-Learn, Pandas, NumPy, and Seaborn."
         >
           Pursuing Data Science, focused on turning raw data into useful

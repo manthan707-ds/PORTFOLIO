@@ -25,12 +25,12 @@ const GlassmorphicFooter: React.FC = () => {
           Work
         </a>
 
-        {/* Lab */}
+        {/*credentials*/}
         <a
-          href="/lab"
+          href="/credentials"
           className="col-span-12 lg:col-span-4 footer-card h-[200px] lg:h-[350px]"
         >
-          Lab
+          Credentials
         </a>
 
         {/* Contact + Github Stack */}
