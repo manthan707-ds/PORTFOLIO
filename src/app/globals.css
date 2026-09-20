@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --color-text: #0A0A0A;
+  /* Jet Black */
+  --color-bg: #FFFFF0;
+  /* Ivory */
+  --color-border: #0A0A0A;
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #0A0A0A;
+    /* Jet Black */
+    --color-bg: #FFFFF0;
+    /* Ivory */
+    --color-border: #0A0A0A;
+  }
+}
+
+@layer base {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+body {
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.footer-card {
+  @apply flex items-end justify-start text-black text-left p-4 lg:p-6 bg-neutral-300/50 backdrop-blur-sm rounded-lg lg:rounded-xl font-medium leading-tight cursor-pointer transition-all duration-500 hover:backdrop-blur-md hover:-translate-y-1 hover:shadow-lg;
+  font-size: clamp(16px, 1.4vw, 24px);
+}
+
+.flex {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Work Page Grid - Override global flex */
+.work-grid-container {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.work-grid {
+  max-width: none !important;
+  width: 100% !important;
+  display: grid !important;
+}
+
+.work-grid>li {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+
+.block-line-wrapper {
+  position: relative;
+  width: max-content;
+  display: block;
+  overflow: hidden;
+}
+
+.block-line {
+  position: relative;
+  display: block;
+}
+
+.block-revealer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101%;
+  height: 101%;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 1;
+}
+
+.line {
+  overflow: hidden;
+  display: block;
+}
+
+/* Add to your global CSS */
+.letter {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.letter {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.parent-container {
+  overflow: visible;
+  /* Allow 3D rotations to be visible */
+}
+
+.char-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.originalText,
+.cloneText {
+  display: inline-block;
+}
+
+.cloneText {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Text Cycle Container */
+.text-cycle-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.text-cycle-container li {
+  text-align: center;
+  display: block;
+}
+
+.blend-diff {
+  color: white;
+  mix-blend-mode: difference;
+  isolation: isolate;
+
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.auto-contrast {
+  filter: invert(1) grayscale(1) contrast(8);
+
+  padding: 12px;
+}
+
+::view-transition-old(root) {
+  animation: none !important;
+  opacity: 1;
+}
+
+::view-transition-new(root) {
+  animation: slide-in-from-bottom 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+  z-index: 200;
+  mix-blend-mode: normal;
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Delay animations on the new page during view transition */
+/* Note: Individual components can override this with their own animation-delay */
+::view-transition-new(root) * {
+  animation-delay: 1.5s !important;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.lab-page-root img:nth-child(n) {
+  animation-delay: calc(n * 0.05s);
+}
+
+.blue-text {
+  font-family: 'Mathos', sans-serif !important;
+}
+
+.box-text {
+  font-family: 'Helevetica', sans-serif !important;
+}
