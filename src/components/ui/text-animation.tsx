@@ -111,18 +111,28 @@ export default function TextAnimation({
           const tl = animate(block, index, lines.current[index]);
           tl.pause();
 
-          ScrollTrigger.create({
+                    ScrollTrigger.create({
             trigger: containerRef.current,
             start: "top 80%",
-            once: true,
             onEnter: () => {
-              tl.play();
+              tl.restart();
+            },
+            onEnterBack: () => {
+              tl.restart();
             },
           });
         });
-      } else {
+            } else {
         blocks.current.forEach((block, index) => {
-          animate(block, index, lines.current[index]);
+          const tl = animate(block, index, lines.current[index]);
+
+          gsap.delayedCall(
+            delay + index * stagger + duration * 2 + 4,
+            function loop() {
+              tl.restart();
+              gsap.delayedCall(duration * 2 + 4, loop);
+            }
+          );
         });
       }
 
