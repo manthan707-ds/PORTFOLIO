@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website built with a focus on performance,clean user experience. Designed to showcase projects, skills, and personal branding using smooth animations and a minimal visual language.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://portfolio-ten-xi-vg0j2exa1g.vercel.app/)
+[![Live Demo]([https://img.shields.io/badge/demo-live-brightgreen)](https://portfolio-ten-xi-vg0j2exa1g.vercel.app/](https://portfolio-ten-xi-vg0j2exa1g.vercel.app/))
 [![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8)](https://tailwindcss.com/)
