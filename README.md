@@ -1,6 +1,6 @@
 # Portfolio
 
-A modern, interactive portfolio website built with a focus on performance, motion design, and clean user experience. Designed to showcase projects, skills, and personal branding using smooth animations and a minimal visual language.
+A modern, interactive portfolio website built with a focus on performance,clean user experience. Designed to showcase projects, skills, and personal branding using smooth animations and a minimal visual language.
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://portfolio-ten-xi-vg0j2exa1g.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
