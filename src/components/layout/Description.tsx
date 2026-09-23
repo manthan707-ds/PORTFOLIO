@@ -51,7 +51,7 @@ export default function Description() {
       </div>
 
       {/* ───────── Right Column (Desktop Only) ───────── */}
-      <div className="hidden lg:block h-full col-span-5">
+           <div className="block h-full col-span-12 lg:col-span-5 mt-6 lg:mt-0">
         <div className="sticky top-[calc(100vh-20vw-172px)] w-full aspect-video rounded-lg lg:rounded-xl overflow-hidden">
           <img
             src="/images/manthan-photo-full.jpg"
