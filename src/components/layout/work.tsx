@@ -48,22 +48,26 @@ const WorkHeading: React.FC = () => {
                 ]}
             />
 
-            <WorkCard
-                title="Titanic Survival Prediction"
-                category="Data Analysis"
-                year="2025"
-                href="https://github.com/manthan707-ds/titanic-survival-prediction"
-                cover="/images/work/titanic/cover.png"
-                icon="/images/work/titanic/icon.png"
+           <WorkCard
+                title="Judicial Backlog Triage"
+                category="AI / ML System"
+                year="2026"
+                href="https://github.com/manthan707-ds/judicial-triage-system"
+                cover="/images/work/judicial-triage/cover.png"
+                 icon="/images/work/judicial-triage/icon.png"
                 video=""
                 tags={[
                     "Python",
-                    "Pandas",
-                    "EDA",
-                    "Classification",
-                    "Scikit-Learn",
-                    "Data Analysis"
-                ]}
+                     "HTML",
+                     "CSS",
+                     "JavaScript",
+                     "Pandas",
+                     "Scikit-Learn",
+                     "LightGBM",
+                     "Flask API",
+                     "Case Triage",
+                     "SIH 2026"
+                 ]}
             />
 
 
