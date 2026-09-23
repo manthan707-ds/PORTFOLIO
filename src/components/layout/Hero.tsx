@@ -3,109 +3,93 @@
 import React from "react";
 import TextAnimation from "../ui/text-animation";
 
+const socials = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/manthan-ghodkhande/",
+    className: "hover:text-[#1A5CFF] transition-colors",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/manthan707-ds",
+    className: "md:pl-12 hover:text-[#1A5CFF] transition-colors",
+  },
+];
+
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full min-h-screen overflow-x-hidden bg-[#fffff0]">
+      <div className="relative z-10 flex flex-col justify-between min-h-screen gap-10 px-4 pt-24 md:pt-32 lg:pt-[22vh] pb-6">
 
-      <style>{`
-        @keyframes heroImageReveal {
-          0% {
-            opacity: 0;
-            transform: translateY(28px) scale(0.96);
-          }
-          60% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0px) scale(1);
-          }
-        }
+        {/* TOP ROW: socials (left) + intro block (right) */}
+        <div className="flex flex-col lg:flex-row lg:justify-between gap-8">
 
-        .hero-bg-image {
-          animation: heroImageReveal 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
-          animation-delay: 0.4s;
-        }
-      `}</style>
-
-      {/* Dark overlay for contrast */}
-      <div className="absolute inset-0 bg-[#fffff0]" />
-
-      {/* Content Wrapper */}
-      <div className="relative z-10 flex flex-col lg:flex-row justify-between gap-8 h-full px-4 pt-24 md:pt-32 lg:pt-[25vh]">
-        {/* Left Column */}
-        <div className="flex flex-col justify-between flex-1 w-full max-w-full lg:max-w-[50vw]">
-          {/* Top Meta Row */}
+          {/* Left: socials */}
           <TextAnimation>
-            <div className="flex flex-col text-lg tracking-widest color-text leading-tight mix-blend-difference">
-              <a
-                href="https://www.linkedin.com/in/manthan-ghodkhande/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://github.com/manthan707-ds"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:pl-12 hover:text-white transition-colors"
-              >
-                GitHub
-              </a>
+            <div className="flex flex-col text-lg tracking-widest leading-tight text-[#0A0A0A]">
+              {socials.map((s) =>
+                React.createElement(
+                  "a",
+                  {
+                    key: s.label,
+                    href: s.href,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    className: s.className,
+                  },
+                  s.label
+                )
+              )}
             </div>
           </TextAnimation>
 
-          {/* Main Title */}
-          <div className="pb-6">
-            <TextAnimation blockColor="#1A5CFF">
-              <h1 className="text-[clamp(48px,12vw,200px)] font-mathos font-bold tracking-[0.08em] leading-[0.8] uppercase text-[#0A0A0A] text-right mix-blend-difference select-none">
-                Manthan <br /> Ghodkhande
-              </h1>
-            </TextAnimation>
-          </div>
-        </div>
-
-        {/* Right Column */}
-        <div className="mt-10 lg:mt-0 flex flex-col justify-between flex-1 w-full max-w-full lg:max-w-[25vw] pb-4">
-          <div className="space-y-4">
-            <TextAnimation >
-              <p className="text-[#1A5CFF] blue-text text-sm md:text-base md:pl-20 lg:pl-40 font-aktura">
-                Data Science Student · ML + Full-Stack. Was Technical Director @ Rotaract Club. I turn raw data into useful predictions — from cleaning and EDA through model training to deployment.
+          {/* Right: blue paragraph + black box, under "Get in touch" */}
+          <div className="w-full lg:max-w-[32rem] lg:ml-auto space-y-4">
+            <TextAnimation>
+              <p className="text-[#1A5CFF] blue-text text-sm md:text-base font-aktura">
+                Data Science Student · ML + Full-Stack. Was Technical Director @ Rotaract Club.
+                I turn raw data into useful predictions — from cleaning and EDA through model
+                training to deployment.
               </p>
             </TextAnimation>
 
-            {/* Text Inbox */}
-            <div className="bg-black text-[#fffff0] box-text flex flex-col sm:flex-row justify-between gap-4 p-4 lg:ml-40 sm:ml-10 md:ml-40 w-[30rem]! mx-auto max-w-full indent-0">
-              <div className="flex flex-col justify-between w-[15rem]! ">
+            <div className="bg-black text-[#fffff0] box-text flex flex-col sm:flex-row gap-4 p-4 w-full">
+              <div className="flex flex-col gap-2 sm:w-2/5">
                 <TextAnimation blockColor="#1A5CFF">
                   <span className="text-sm">Data in, decisions out.</span>
                 </TextAnimation>
                 <TextAnimation blockColor="#1A5CFF">
-                  <span className="text-sm">Currently sharpening Feature Engineering & Model Evaluation.</span>
+                  <span className="text-sm">
+                    Currently sharpening Feature Engineering &amp; Model Evaluation.
+                  </span>
                 </TextAnimation>
               </div>
-              <div className="flex-1 ">
-                  <TextAnimation blockColor="#1A5CFF">
-                  <span className=" text-sm">
-                    Built end-to-end ML projects including a live Streamlit web app for house price prediction. Comfortable across the full pipeline: cleaning → EDA → model training → deployment. Programming in Python with Scikit-Learn, Pandas, NumPy, and Seaborn. Goal: land a Data Science internship and contribute to real-world ML problems.
+              <div className="sm:w-3/5">
+                <TextAnimation blockColor="#1A5CFF">
+                  <span className="text-sm">
+                    Built end-to-end ML projects including a live Streamlit web app for house
+                    price prediction. Comfortable across the full pipeline: cleaning → EDA →
+                    model training → deployment. Programming in Python with Scikit-Learn,
+                    Pandas, NumPy, and Seaborn. Goal: land a Data Science internship and
+                    contribute to real-world ML problems.
                   </span>
                 </TextAnimation>
               </div>
             </div>
-          </div>
 
-          {/* Bottom Section */}
-          <div className="space-y-4">
-            <div className="text-right">
-              <p className="text-white/80 text-xl indent-2 pr-78">Built by</p>
-              <p className="text-white text-2xl italic pr-64">Manthan</p>
-            </div>
-            <div className="text-right hidden md:block">
-              <p className="text-[#1A5CFF] text-lg">© 2026</p>
-            </div>
+            <p className="text-right text-sm text-[#0A0A0A]/70">
+              Built by <span className="italic text-[#0A0A0A]">Manthan</span> · © 2026
+            </p>
           </div>
+        </div>
+
+        {/* BOTTOM: name */}
+        <div className="pb-16">
+          <TextAnimation blockColor="#1A5CFF">
+            <h1 className="text-[clamp(48px,12vw,200px)] font-mathos font-bold tracking-[0.08em] leading-[0.8] uppercase text-[#0A0A0A] mix-blend-difference select-none">
+              Manthan <br /> Ghodkhande
+            </h1>
+          </TextAnimation>
         </div>
       </div>
     </section>
