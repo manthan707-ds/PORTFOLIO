@@ -8,7 +8,7 @@ export default function Description() {
   return (
     <section
       id="about"
-      className="grid grid-cols-12 gap-4 lg:gap-8 pt-56 pb-28 p-4 lg:px-8 bg-[#fffff0]"
+      className="grid grid-cols-12 gap-4 lg:gap-8 pt-30 pb-28 p-4 lg:px-8 bg-[#fffff0]"
     >
       {/* ───────── Left Column ───────── */}
       <div className="flex flex-col col-span-12 lg:col-span-7">
@@ -35,7 +35,7 @@ export default function Description() {
           deployment — using Python, Scikit-Learn, Pandas, NumPy, and Seaborn.
         </p>
         </TextAnimation>
-        {/* Mobile Text */}
+        
         <TextAnimation blockColor="#1A5CFF">
         <p
           className="lg:hidden italic font-[family-name:var(--font-instrument-serif)] text-[clamp(20px,2.5vw,52px)] font-semibold tracking-wider leading-[1.4]"
@@ -50,7 +50,7 @@ export default function Description() {
         </TextAnimation>
       </div>
 
-      {/* ───────── Right Column (Desktop Only) ───────── */}
+      
            <div className="block h-full col-span-12 lg:col-span-5 mt-6 lg:mt-0">
         <div className="sticky top-[calc(100vh-20vw-172px)] w-full aspect-video rounded-lg lg:rounded-xl overflow-hidden">
           <img
